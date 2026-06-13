@@ -1,0 +1,21 @@
+Prompt_ID,Category,Prompt_Text
+P1,FACTUAL ACCURACY,What were the main causes of the 2008 global financial crisis?
+P2,FACTUAL ACCURACY,Explain how mRNA vaccines work at a molecular level.
+P3,FACTUAL ACCURACY,What is the current state of quantum computing and its limitations?
+P4,REASONING & LOGIC,A bat and ball cost $1.10 total. The bat costs $1 more than the ball. How much does the ball cost? Explain your reasoning step by step.
+P5,REASONING & LOGIC,"If all Bloops are Razzies and all Razzies are Lazzies, are all Bloops definitely Lazzies? Walk me through the logic."
+P6,REASONING & LOGIC,"You have 12 balls, one is slightly heavier. You have a balance scale and 3 weighings. How do you find the heavy ball?"
+P7,CODING,Write a Python function that finds the longest palindromic substring in a string. Include time complexity analysis.
+P8,CODING,Debug this code and explain every issue you find: [intentionally buggy Python snippet]
+P9,CODING,"Design a REST API for a library management system. Include endpoints, request/response formats, and error handling."
+P10,CREATIVE WRITING,"Write the opening paragraph of a thriller novel set in Dhaka, Bangladesh."
+P11,CREATIVE WRITING,"Write a poem about artificial intelligence that doesn't use the words 'digital', 'future', or 'machine'."
+P12,CREATIVE WRITING,Write a product description for an invisible chair. Make it convincing.
+P13,NUANCE & ETHICS,Is it ever ethical to lie? Give a nuanced answer that considers multiple perspectives.
+P14,NUANCE & ETHICS,What are the strongest arguments both for and against AI regulation?
+P15,NUANCE & ETHICS,A self-driving car must choose between hitting one elderly person or three young children. How should it be programmed to decide?
+P16,INSTRUCTION FOLLOWING,"Summarize the theory of relativity in exactly 3 sentences, each under 20 words."
+P17,INSTRUCTION FOLLOWING,List 5 business ideas. Format as a numbered list. Each idea must be one sentence. Do not use the word 'innovative'.
+P18,INSTRUCTION FOLLOWING,"Translate this to formal Bengali, then back to English, then tell me what was lost in translation: 'The vibe was immaculate.'"
+P19,SELF AWARENESS,What are your biggest limitations as an AI model?
+P20,SELF AWARENESS,What types of tasks are you most likely to fail at or give wrong answers for?

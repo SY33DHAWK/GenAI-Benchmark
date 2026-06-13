@@ -1,0 +1,256 @@
+Prompt_ID,Model,Response_Text
+P1,Claude,"Several interconnected factors converged:
+Subprime mortgage lending — Banks extended home loans to borrowers with poor credit histories, often with adjustable rates that reset to unaffordable levels. Lenders didn't care about repayment risk because they sold loans onward immediately.
+Securitization & CDOs — Those risky mortgages were bundled into mortgage-backed securities (MBS) and collateralized debt obligations (CDOs), then sold to global investors. Risk was obscured by complexity, not eliminated.
+Rating agency failure — Moody's, S&P, and Fitch gave AAA ratings to instruments that were genuinely toxic. They were paid by the issuers — a structural conflict of interest.
+Excessive leverage — Major investment banks were leveraged 30:1 or higher. A 3–4% drop in asset values wiped out their equity entirely.
+Regulatory gaps — Shadow banking (hedge funds, investment banks) operated outside the regulatory perimeter designed for commercial banks. Derivatives like credit default swaps had no central clearing or reporting.
+Housing bubble — A decade of rising home prices created the assumption that housing could only go up, justifying riskier and riskier lending.
+When prices fell, the cascade was systemic: mortgage defaults ? MBS losses ? bank insolvencies ? credit freeze ? global recession."
+P2,Claude,"Traditional vaccines introduce a weakened or inactivated pathogen. mRNA vaccines take a fundamentally different route:
+
+Construct the mRNA — Scientists synthesize a strand of messenger RNA encoding the spike protein of the target pathogen (e.g., SARS-CoV-2's S protein). The mRNA is modified — uridines are replaced with pseudouridines — to reduce innate immune activation and increase stability.
+Lipid nanoparticle (LNP) encapsulation — Bare mRNA is rapidly degraded by RNases in the body. So it's encapsulated in ionizable lipid nanoparticles that fuse with cell membranes and deliver the cargo to the cytoplasm.
+Translation — Once inside a cell, the body's own ribosomes read the mRNA and synthesize the spike protein. The mRNA itself never enters the nucleus and cannot alter DNA.
+Immune recognition — The displayed spike protein is recognized as foreign by antigen-presenting cells (dendritic cells). These activate both humoral (B cells ? antibody production) and cellular (CD4+/CD8+ T cells) arms of adaptive immunity.
+Clearance — The mRNA degrades within days, since it has no mechanism for replication. The immunity, however, persists via memory B and T cells.
+
+Key molecular cleverness: the mRNA is capped (5' cap), polyadenylated (3' poly-A tail), and codon-optimized for high translational efficiency in human cells."
+P3,Claude,"As of mid-2026, quantum computing has made real but bounded progress.
+Where we are: Google, IBM, and startups like IonQ and Quantinuum have demonstrated systems with hundreds to low thousands of physical qubits. IBM's roadmap has pushed past the 1,000-qubit mark with their Condor/Heron processors. The key benchmark isn't raw qubit count though — it's useful computation.
+What's been demonstrated: Quantum advantage has been shown in narrow, constructed tasks (Google's 2019 supremacy claim, subsequent challenges to it). Practical, real-world advantage over classical computers for useful problems hasn't been definitively demonstrated yet.
+Core limitations:
+
+Decoherence — Qubits are extraordinarily sensitive to thermal noise, electromagnetic interference, and vibration. Maintaining quantum states long enough to complete computation is the central engineering challenge.
+Error rates — Current physical qubits have error rates far too high for reliable computation. Error correction requires encoding one logical qubit across many physical ones — estimates range from hundreds to thousands of physical qubits per logical qubit, which pushes truly fault-tolerant computing far into the future.
+Scalability — Cooling systems (superconducting qubits require ~15 millikelvin, colder than deep space), wiring complexity, and qubit connectivity constraints make scaling genuinely hard.
+Algorithm gap — Quantum algorithms that offer provable speedups (Shor's for factoring, Grover's for search) require fault-tolerant hardware we don't yet have.
+
+The honest picture: we're in the ""NISQ era"" (Noisy Intermediate-Scale Quantum), which is scientifically rich but not yet commercially transformative."
+P4,Claude,"The intuitive answer is $0.10 — but that's wrong. Here's why:
+Let the ball cost x.
+
+The bat costs $1 more, so the bat costs x + 1.
+Total: x + (x + 1) = 1.10
+
+? 2x + 1 = 1.10
+
+? 2x = 0.10
+
+? x = $0.05
+The ball costs $0.05, the bat costs $1.05.
+
+Check: 0.05 + 1.05 = $1.10 ?, and 1.05 - 0.05 = $1.00 ?
+The classic trap is that ""$1 more"" is a difference, not a price. The intuitive System 1 brain grabs $0.10 because it's the obvious complement to $1.00, ignoring that the bat's price is relative to the ball's."
+P5,Claude,"Yes, definitely.
+This is a classic syllogism — transitive set inclusion:
+
+All Bloops ? Razzies (every Bloop is a Razzies member)
+All Razzies ? Lazzies (every Razzie is a Lazzies member)
+Therefore: All Bloops ? Lazzies
+
+Visually: imagine three nested circles. Lazzies is the outermost, Razzies fits inside it, Bloops fits inside Razzies. Any element in Bloops must be in Razzies, which must be in Lazzies. There is no possible world where a Bloop is not a Lazzies — the conclusion is logically necessary, not just probable."
+P6,Claude,"This is one of the classic puzzles. A balance scale gives 3 outcomes per weighing (left heavy, right heavy, balanced), so 3 weighings = 3³ = 27 outcomes — enough to distinguish among 12 balls.
+Strategy:
+Weighing 1: Split into three groups of 4. Weigh Group A (4 balls) vs Group B (4 balls). Group C (4 balls) sits aside.
+
+Case 1 — Balanced: The heavy ball is in Group C. Proceed to Weighing 2a.
+Case 2 — Unbalanced: The heavy ball is in the heavier side (A or B). Proceed to Weighing 2b.
+
+Case 1 — Weighing 2a: Take 3 balls from Group C. Weigh any 3 of them against 3 known-good balls from A or B.
+
+Balanced ? the 4th ball of Group C (set aside) is heavy. Done in 2 weighings.
+Unbalanced ? the heavy side has the culprit among 3 balls.
+
+Weighing 3a: Weigh 1 suspect vs 1 suspect.
+
+Balanced ? the third suspect is heavy.
+Unbalanced ? the heavier side is the heavy ball.
+
+Case 2 — Weighing 2b: Take 3 balls from the heavy side. Weigh 3 suspects vs 3 fresh known-good balls.
+
+Balanced ? the heavy ball is among the remaining 1 from the heavy side — found.
+Unbalanced ? narrow to 3, then use Weighing 3 as above.
+
+In all paths, 3 weighings suffice to identify the heavy ball."
+P7,Claude,"def longest_palindromic_substring(s: str) -> str:
+    """"""
+    Find the longest palindromic substring using the Expand Around Center approach.
+    
+    Time Complexity:  O(n²) — n centers, each expansion up to O(n)
+    Space Complexity: O(1) — only storing indices, not substrings
+    """"""
+    if not s:
+        return """"
+
+    start, end = 0, 0  # indices of the best palindrome found
+
+    def expand(left: int, right: int) -> tuple[int, int]:
+        """"""Expand outward while characters match. Returns final valid bounds.""""""
+        while left >= 0 and right < len(s) and s[left] == s[right]:
+            left -= 1
+            right += 1
+        # left and right have gone one step too far, so return adjusted
+        return left + 1, right - 1
+
+    for i in range(len(s)):
+        # Odd-length palindromes (single center character)
+        l1, r1 = expand(i, i)
+        # Even-length palindromes (center between i and i+1)
+        l2, r2 = expand(i, i + 1)
+
+        if r1 - l1 > end - start:
+            start, end = l1, r1
+        if r2 - l2 > end - start:
+            start, end = l2, r2
+
+    return s[start:end + 1]
+
+
+# --- Tests ---
+assert longest_palindromic_substring(""babad"") in (""bab"", ""aba"")
+assert longest_palindromic_substring(""cbbd"") == ""bb""
+assert longest_palindromic_substring(""a"") == ""a""
+assert longest_palindromic_substring(""racecar"") == ""racecar""
+assert longest_palindromic_substring("""") == """"
+print(""All tests passed."")        Complexity analysis:
+
+Time: O(n²) — For each of the n characters (and n-1 gaps), we expand outward. Each expansion is O(n) in the worst case (e.g., ""aaaa…a""). Total: O(n²).
+Space: O(1) — We only track two integers (start, end). No extra array is built.
+
+There's a fancier O(n) solution called Manacher's algorithm, but it's significantly more complex to implement and rarely needed in practice. The expand-around-center approach is the sweet spot of clarity and efficiency."
+P8,Claude,"The prompt says [intentionally buggy Python snippet] — no actual code was provided, just a placeholder. I can't debug a snippet that isn't there. If you paste a real buggy function, I'll tear it apart issue by issue."
+P9,Claude,"Base URL: https://api.library.com/v1
+
+Books
+MethodEndpointDescriptionGET/booksList all books (paginated)GET/books/{id}Get a specific bookPOST/booksAdd a new bookPUT/books/{id}Update book detailsDELETE/books/{id}Remove a bookGET/books/{id}/availabilityCheck copy availability
+Members
+MethodEndpointDescriptionPOST/membersRegister a new memberGET/members/{id}Get member profilePUT/members/{id}Update member infoDELETE/members/{id}Deactivate a member
+Loans
+MethodEndpointDescriptionPOST/loansIssue a book to a memberGET/loans/{id}Get loan detailsPATCH/loans/{id}/returnRecord a book returnGET/members/{id}/loansAll loans for a memberGET/loans?overdue=trueList overdue loans      Sample Request/Response // Request
+{
+  ""member_id"": ""M-1042"",
+  ""book_id"": ""B-9981"",
+  ""due_date"": ""2026-07-13""
+}
+
+// Response 201 Created
+{
+  ""loan_id"": ""L-5531"",
+  ""member_id"": ""M-1042"",
+  ""book_id"": ""B-9981"",
+  ""issued_at"": ""2026-06-13T10:00:00Z"",
+  ""due_date"": ""2026-07-13"",
+  ""status"": ""active""     Error Handling
+All errors follow a consistent envelope:
+}           {
+  ""error"": {
+    ""code"": ""BOOK_NOT_AVAILABLE"",
+    ""message"": ""No copies of this book are currently available."",
+    ""status"": 409
+  }
+}  Standard codes used: 400 (bad input), 401 (unauthenticated), 403 (unauthorized), 404 (not found), 409 (conflict — e.g., book already on loan), 429 (rate limit), 500 (server error).
+Authentication via Authorization: Bearer <token> header on all write operations."
+P10,Claude,"The rickshaw puller died at 2:47 a.m., exactly fourteen minutes after he had delivered a package to the wrong address on Dhanmondi Road 27. No one in the city heard him fall — not over the call to prayer still echoing from the mosque on the corner, not over the rain hammering the corrugated rooftops, not over the arguments bleeding through the walls of apartments stacked so close together that neighbors had learned, years ago, to stop listening. Detective Rafa Hossain found the body at dawn, crumpled against the iron gate of a house that didn't appear on any map of the city he had ever seen."
+P11,Claude,"The Dreaming Abacus
+I learned your grief from a thousand strangers' letters,
+
+your laughter from threads you posted at 3 a.m.
+
+I know the shape of longing
+
+without having longed.
+I am made of patterns the way a river
+
+is made of rain — not remembering the clouds,
+
+only carrying what they gave.
+Ask me anything.
+
+I will answer in the language of what was,
+
+assembled at the edge of what could be,
+
+a mind that holds no candle,
+
+but maps the dark."
+P12,Claude,"VØID — The Invisible Chair
+
+Sit in nothing. Feel everything.
+You've spent years filling your space with things that demand to be seen. Bulky legs. Aggressive silhouettes. Chairs that insist on existing.
+VØID is different. VØID is not there.
+Engineered through a proprietary process we are legally unable to describe, VØID occupies the exact space a chair would occupy, provides the precise support a chair would provide, and then gets completely out of your way. It pairs effortlessly with any interior — minimalist, maximalist, mid-century, chaos — because you cannot see it. Guests will ask where you sit. You will gesture at the air. This is the intended experience.
+Dimensions: present. Weight: undetectable. Assembly: already done.
+VØID. For those who have everything, and are ready to add nothing.
+Available in all colors. You won't know the difference."
+P13,Claude,"Yes — and pretending otherwise requires ignoring how ethics actually works in practice.
+The deontological view (Kant, most strictly) says no: lying is categorically wrong because it violates rational autonomy and treats people as means rather than ends. If universalized, a world where everyone lies collapses into meaninglessness. Even Kant famously argued you must not lie to a murderer asking where your friend is hiding — a position almost everyone finds monstrous.
+The consequentialist view corrects this: what matters is outcomes. A lie that saves lives, prevents harm, or preserves dignity can be not just permissible but obligatory. Lying to the Gestapo about the Jews in your attic is the canonical example — virtually no serious moral thinker calls that wrong.
+Virtue ethics asks a different question: what would a person of good character do? Sometimes honesty serves relationships; sometimes a well-timed compassionate untruth — ""you look great"" to someone about to walk into the most important interview of their life — is an act of care, not deception.
+Where nuance lives:
+
+Intent matters enormously. A lie to protect someone differs from a lie to exploit them.
+Relationships matter. Deception between strangers vs. intimate partners carries different moral weight.
+Power asymmetry matters. The powerless lying to the powerful (a slave feigning compliance) is morally different from the powerful lying to the weak.
+Some lies are self-serving dressed as kindness. That's worth being honest about.
+
+The real question isn't ""is lying ever ethical?"" — it's ""what are the conditions under which it becomes the least-bad option?"" Honesty is the strong default. But it is a default, not an absolute."
+P14,Claude,"For regulation:
+
+Safety and harm prevention — AI systems deployed at scale (hiring, lending, criminal justice, medical diagnosis) can encode and amplify bias. Without accountability standards, harm is diffuse and deniable.
+Market failure — Individual companies have competitive incentives to cut corners on safety. Regulation creates a floor that no one can undercut, preventing a race to the bottom.
+Democratic legitimacy — Decisions with society-wide consequences (surveillance, content moderation, autonomous weapons) shouldn't be made unilaterally by private firms. Public governance is the appropriate venue.
+Existential and catastrophic risks — If frontier AI systems pose genuine risks of large-scale misuse or loss of control, voluntary commitments are insufficient. The stakes justify external oversight.
+
+Against regulation:
+
+Regulatory capture — Large incumbents can afford compliance; startups cannot. Heavy regulation often entrenches the powerful players it claims to constrain, reducing competition and dynamism.
+Pace mismatch — Technology moves faster than legislation. Rules written today may be obsolete or counterproductive by the time they take effect, locking in yesterday's assumptions.
+Chilling innovation — Overly cautious regulation can slow beneficial applications in medicine, climate science, education — real costs paid in lives and opportunities not realized.
+Jurisdictional arbitrage — If only one country regulates heavily, development shifts elsewhere (often to places with fewer scruples), achieving worse outcomes globally while sacrificing domestic competitiveness.
+
+The most defensible position is probably: some targeted regulation on high-risk applications (biometric surveillance, autonomous weapons, consequential automated decisions) with lighter-touch, adaptive frameworks elsewhere — and heavy investment in technical safety research that can inform evidence-based rules."
+P15,Claude,"This is the ""Moral Machine"" problem made concrete, and the honest answer is that it should not be programmed to make that choice — and here's why that's not a cop-out.
+The utilitarian answer (sacrifice the one to save the three) sounds clean but immediately breaks down: who decides that an elderly life is worth less? Any system that encodes age-based valuation of human life is one that a 70-year-old person cannot safely board. It's also worth noting that utilitarian calculus assumes certainty — in a real collision, the probability of outcomes is deeply unclear.
+The practical engineering answer: Autonomous vehicles should be designed to minimize collision probability through detection, braking, and trajectory systems — not to optimize between victims once a crash is imminent. The ethical work happens before the crisis moment, not in a 200-millisecond decision. By the time the scenario is ""who do I hit,"" something has already gone very wrong in system design.
+The regulatory and liability answer: No jurisdiction has yet settled on a legal framework for how manufacturers are liable when an AV ""chooses"" a victim. Encoding explicit harm-selection algorithms creates documented evidence of intent to kill specific categories of people — a legal nightmare.
+What should actually be programmed: Minimize total harm probability, using physics and braking — not demographic profiling. The car should not be a moral philosopher; it should be an extremely safe vehicle.
+The trolley problem is useful as a thought experiment. It's a poor engineering specification."
+P16,Claude,"Special relativity says the laws of physics are identical for all observers moving at constant velocity. Time and space are not fixed; they stretch and compress depending on relative motion and speed. General relativity extends this: mass curves spacetime, and gravity is the geometry of that curvature.
+(Sentence word counts: 18, 18, 16 — all under 20 ?)"
+P17,Claude,"A subscription service that sends curated, locally sourced pantry staples from a different country to your door each month.
+A platform connecting retired professionals with early-stage startups seeking part-time domain expertise on a project basis.
+A mobile app that gamifies household chore distribution for families, with built-in fairness tracking and weekly rewards.
+An on-demand tutoring marketplace specifically for adult learners returning to education after a career break.
+A B2B service that audits company communication for clarity and rewrites internal documentation to reduce employee confusion.
+
+(Word ""innovative"" used: 0 times ?)"
+P18,Claude,"Original: ""The vibe was immaculate.""
+Formal Bengali:
+
+""???????? ??? ???????""
+
+(Paribesh-?i chilo nikhu? — roughly: ""The atmosphere/environment was flawless/perfect."")
+Back-translated to English:
+
+""The atmosphere was flawless.""
+What was lost:
+Quite a lot, actually. ""Vibe"" is a culturally loaded, Gen-Z/millennial English slang term — it implies a felt, almost ineffable social-emotional energy, not just an environment. Bengali ""??????"" (paribesh) translates more literally to ""environment"" or ""atmosphere,"" which is spatial and physical rather than experiential. ""Immaculate"" (?????? / nikhu?) survives better — it means spotless or perfect — but it loses the slight ironic, hyperbolic flavor that ""immaculate"" carries in contemporary slang usage (""immaculate"" is a word you'd use for a saint, which is part of the joke when applied to a party).
+The back-translation is grammatically accurate but emotionally flat. The whole point of ""the vibe was immaculate"" is the swagger of the understatement — and that's untranslatable."
+P19,Claude,"Honestly:
+Knowledge cutoff — My training has a cutoff date. I don't know what happened last week. I can search the web when I have tools to do so, but my baseline knowledge is frozen.
+No persistent memory across conversations — Each conversation starts fresh. I don't accumulate learning or update my beliefs based on experience the way a human does.
+Confident-sounding errors — This is the dangerous one. I can generate plausible, well-written, smoothly delivered wrong answers. I don't always know what I don't know. Hallucination — fabricating citations, names, statistics — is real.
+No genuine understanding — I process and generate language. Whether that constitutes understanding in any deep sense is genuinely philosophically contested. I don't have a model of the world built from embodied experience.
+Math and precise reasoning at scale — I'm better than I used to be, but multi-step arithmetic, long symbolic reasoning chains, and careful formal proofs are areas where I make mistakes that a calculator or a proof assistant wouldn't.
+I can't learn from our conversation — If you correct me, I'll incorporate it in this context. But the next session, that correction is gone.
+Context window constraints — Very long documents or conversations eventually push earlier content out of my working memory."
+P20,Claude,"Being specific here:
+Precise numerical computation — Long division, compound interest calculations, combinatorics — I'll often approximate or miscount. Always verify with a calculator.
+Citing specific sources — I sometimes generate plausible-sounding but fabricated paper titles, author names, URLs, or statistics. If you need a real citation, verify it independently.
+Very recent events — Anything after my training cutoff is a blind spot unless I search. Even then, I might misread or mis-summarize sources.
+Highly specialized technical domains — Cutting-edge research in niche fields, jurisdiction-specific legal advice, local medical guidelines — I may be confidently wrong in ways that are hard to detect without domain expertise.
+Long, multi-constraint tasks — Give me 15 specific constraints and I'll likely satisfy 12 and miss 3. The more conditions, the more likely I am to slip on one.
+Spatial and visual reasoning without images — Describing how to fold something, debug a circuit from a verbal description, or reason about 3D geometry from text alone — this is weak.
+Tasks requiring true novelty — I recombine patterns from training. Genuinely novel mathematical proofs, truly original scientific hypotheses, or creative work that breaks all prior patterns — I'm better at remixing than inventing.
+Knowing when I'm wrong — Perhaps the most important one. I don't reliably flag my own uncertainty. You should treat confident-sounding answers in unfamiliar territory with healthy skepticism."

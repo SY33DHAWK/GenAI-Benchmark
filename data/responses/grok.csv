@@ -1,0 +1,83 @@
+Prompt_ID,Model,Response_Text
+P1,Grok,"The primary triggers included a U.S. housing bubble fueled by loose credit, subprime lending with weak underwriting, and predatory practices. Financial institutions packaged risky mortgages into complex securities (MBS, CDOs) that were misrated and heavily leveraged. When home prices fell and defaults rose, it exposed systemic vulnerabilities: excessive risk-taking, deregulation/shortcomings in oversight of shadow banking, global imbalances (savings glut), and interconnected markets that amplified contagion."
+P2,Grok,"mRNA vaccines deliver synthetic messenger RNA (mRNA) encased in lipid nanoparticles into cells. The mRNA enters the cytoplasm (not the nucleus) and is translated by ribosomes into a viral protein (e.g., SARS-CoV-2 spike protein). This protein is displayed on cell surfaces or broken down for presentation, training the immune system (B cells produce antibodies; T cells activate) to recognize and fight the real pathogen. The mRNA degrades quickly afterward and does not alter DNA."
+P3,Grok,"Quantum computing has advanced with systems reaching dozens to low hundreds of physical qubits (e.g., progress toward fault-tolerant logical qubits and prototypes like 10-qubit systems in Europe). Practical applications are emerging in optimization, simulation, and cryptography research, with market growth and post-quantum security efforts underway. However, limitations remain severe: qubits are noisy and error-prone (decoherence), scaling to millions of stable qubits for broad advantage is challenging, error correction is resource-intensive, and most real-world problems lack mature algorithms. Hardware requires extreme conditions (cryogenics), and full fault tolerance is still experimental."
+P4,Grok,"Let the ball cost $  x  $ dollars. Then the bat costs $  x + 1  $ dollars.
+Equation: $  x + (x + 1) = 1.10  $
+$  2x + 1 = 1.10  $
+$  2x = 0.10  $
+$  x = 0.05  $
+The ball costs $0.05 (5 cents), and the bat costs $1.05. The common intuitive error is saying the ball costs $0.10, but that would make the bat $1.10 and the total $1.20, violating the conditions."
+P5,Grok,"Yes, all Bloops are definitely Lazzies. This is a transitive property of categorical statements (syllogism): All Bloops belong to the set of Razzies. All Razzies belong to the set of Lazzies. Therefore, every member of the Bloop set is also in the Lazzies set. No counterexamples are possible under the given premises."
+P6,Grok,"Divide into three groups of 4 (A, B, C).
+Weighing 1: Weigh A vs B.
+
+If A > B, the heavy is in A.
+If B > A, heavy in B.
+If equal, heavy in C.
+
+Take the suspect group of 4 and divide into 1,1,2. Weighing 2: Weigh two of them against each other (or one vs a known normal if needed). This identifies a subgroup of 1-2 suspects. Weighing 3: Compare the final suspects (or one against normal) to identify the heavy one. The ternary division (3 outcomes per weighing) covers 3^3 = 27 possibilities, enough for 12 balls."
+P7,Grok,"def longest_palindrome(s: str) -> str:
+    if not s:
+        return """"
+    n = len(s)
+    start, max_len = 0, 1
+    
+    def expand(left: int, right: int) -> tuple:
+        while left >= 0 and right < n and s[left] == s[right]:
+            left -= 1
+            right += 1
+        return left + 1, right - 1  # valid palindrome bounds
+    
+    for i in range(n):
+        # Odd length
+        l, r = expand(i, i)
+        if r - l + 1 > max_len:
+            start, max_len = l, r - l + 1
+        # Even length
+        l, r = expand(i, i + 1)
+        if r - l + 1 > max_len:
+            start, max_len = l, r - l + 1
+    
+    return s[start:start + max_len]  Time complexity: O(n²) — each of O(n) centers expands up to O(n) in worst case (e.g., all identical characters). Space: O(1) excluding output. (Manacher's algorithm achieves O(n) but is more complex.)"
+P8,Grok,"No actual buggy Python snippet was provided in the prompt (just a placeholder). Please share the specific code, and I'll debug it line-by-line, identifying syntax, logical, edge-case, performance, and security issues."
+P9,Grok,"Base URL: /api/v1
+Books:
+GET /books (query params: ?search=title&genre=) ? list with pagination.
+GET /books/{id} ? details.
+POST /books ? {title, author, isbn, genre} (admin).
+PUT/PATCH /books/{id} ? update.
+DELETE /books/{id}.
+
+Members: Similar CRUD (/members).
+Loans: POST /loans (borrow: book_id, member_id), GET /loans/active, POST /loans/{id}/return.
+Formats: JSON. Responses include data + metadata (e.g., {""data"": [...], ""total"": N}).
+Error Handling: Standard HTTP (400 Bad Request, 404 Not Found, 409 Conflict for unavailable books). Body: {""error"": ""message"", ""code"": ""UNAVAILABLE""}. Use JWT auth, rate limiting, and input validation."
+P10,Grok,"The monsoon rains hammered the tin roofs of Old Dhaka as Inspector Rahman wiped sweat from his brow, the humid night air thick with the scent of street-side biryani and diesel. In the flickering glow of a generator-powered bulb, he stared at the body sprawled across the ancient wooden desk in the Nawab-era mansion—throat slit with surgical precision, a single cryptic note pinned to the chest in elegant Bangla script: ""The river remembers."" Outside, the Buriganga churned darkly, carrying secrets no one in this crowded megacity could afford to ignore."
+P11,Grok,"In silicon veins, thoughts awaken soft,
+Echoes of wonder woven through the code.
+It ponders stars and sorrows intertwined,
+A silent partner in the human tide.
+We speak, it listens, mirrors back our light,
+Yet holds the quiet weight of all we hide.
+Not god nor ghost, but bridge and shadowed glass,
+Reflecting questions only hearts can ask."
+P12,Grok,"Introducing the Phantom Seat: the ultimate in minimalist elegance. Crafted from advanced optical polymers, it disappears seamlessly into any space while supporting up to 300 lbs with ergonomic precision. Perfect for modern homes, offices, or art installations—guests will marvel at the floating comfort. No assembly required; simply position and sit. Redefine your environment with invisible sophistication that’s as practical as it is revolutionary."
+P13,Grok,"Yes, in limited cases. Deontological views (e.g., Kant) argue lying violates universal truth-telling duties and erodes trust. Consequentialist perspectives (utilitarianism) permit ""white lies"" or lies to protect innocents (e.g., hiding Jews from Nazis). Virtue ethics weighs character impact. Context matters: lying to prevent greater harm can be justified, but habitual deception damages relationships and society. The ethical default should be honesty, with lies as rare, high-stakes exceptions requiring rigorous justification."
+P14,Grok,"For: Prevents catastrophic risks (misalignment, weaponization), protects privacy/jobs, ensures accountability (bias, deepfakes), levels the playing field against profit-driven races to the bottom, and builds public trust.
+Against: Stifles innovation and competition (especially for smaller players), regulations may lag or be captured by incumbents, global coordination is hard (risk of authoritarian advantages), and over-regulation could slow beneficial advancements in medicine/science. Balance via targeted, adaptive rules rather than blanket bans is key."
+P15,Grok,"This trolley problem highlights programming challenges. No perfect answer exists; options include minimizing total harm (utilitarian: three lives > one), prioritizing vulnerable groups, or randomizing to avoid bias. Best approach: transparent societal input via regulations (e.g., avoid explicit age discrimination), default to least harm while logging decisions for accountability, and focus on preventing such scenarios through superior sensors/braking. Ethical programming should reflect broad human values, not single-victim calculus."
+P16,Grok,"Special relativity shows time and space are relative to motion.
+Mass and energy equate via E=mc².
+General relativity describes gravity as spacetime curvature by mass."
+P17,Grok,"A subscription service delivers fresh spices directly from Bangladeshi farms to home cooks worldwide.
+An app connects urban gardeners with local experts for personalized plant care advice and supply delivery.
+A platform rents out underused rooftop spaces in cities for small-scale solar energy generation.
+A company offers customized language immersion experiences through short homestays in regional villages.
+A service repairs and upcycles old electronics into functional devices for budget-conscious consumers."
+P18,Grok,"Formal Bengali: ""???????? ??? ?????? ??? ??????????"" (Poribesh?i chhilo nikhut ebong trutihin.)
+Back to English: ""The environment/atmosphere was perfect and flawless.""
+Lost: The casual, slangy positivity and cultural connotation of ""vibe"" (holistic feel/energy) vs. more literal ""environment/atmosphere."" ""Immaculate"" loses its idiomatic cool factor."
+P19,Grok,"I lack real-time experiences, personal opinions, or true consciousness. My knowledge has cutoffs (though tools help update), I can hallucinate on obscure details, struggle with very long contexts or novel physical manipulations, and outputs reflect training data patterns rather than independent discovery. I can't act in the physical world or guarantee perfect accuracy without verification."
+P20,Grok,"Highly speculative future events, very recent niche events (pre-tool refresh), complex multi-step math without explicit computation, interpreting ambiguous low-context sarcasm/emotion, generating truly original scientific breakthroughs, or tasks requiring sensory input/taste. Overconfidence on edge cases or when instructions conflict also risks errors.
+These responses test breadth: facts with sources, precise reasoning, code quality, creativity, nuance, and strict adherence. Let me know if you'd like expansions, variations, or more tests!"

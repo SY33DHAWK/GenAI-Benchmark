@@ -1,0 +1,181 @@
+Prompt_ID,Model,Response_Text
+P1,Gemini,"The 2008 financial crisis was triggered by a confluence of systemic failures and aggressive financial practices, primarily centered in the US housing market:
+
+Subprime Mortgage Lending: Banks issued mortgages to borrowers with poor credit histories, often with adjustable rates that later skyrocketed.
+
+Securitization and Complex Derivatives: These risky mortgages were bundled into Mortgage-Backed Securities (MBS) and Collateralized Debt Obligations (CDO). The complexity obscured their actual risk.
+
+Credit Rating Agency Failures: Agencies like Moody's and S&P gave AAA ratings to these highly toxic CDOs, misleading investors about their safety.
+
+Deregulation: The repeal of the Glass-Steagall Act allowed commercial and investment banking to merge, leading to excessive risk-taking with depository funds.
+
+Over-leveraging: Major financial institutions held dangerously low capital reserves relative to the massive debt they had taken on, leaving them unable to absorb losses when the housing bubble burst."
+P2,Gemini,"Unlike traditional vaccines that use weakened or inactivated viruses, mRNA (messenger RNA) vaccines deliver genetic instructions to the body's cells.
+
+1. Delivery: The mRNA sequence, containing the blueprint for the virus's ""spike protein,"" is encased in a lipid nanoparticle to protect it from degrading in the bloodstream and to help it cross the cell membrane.
+
+2. Translation: Once inside a human cell's cytoplasm (it does not enter the nucleus or alter DNA), ribosomes read the mRNA strand and synthesize the viral spike protein.
+
+3. Immune Response: The cell displays the newly built spike proteins on its surface. The immune system recognizes these proteins as foreign, triggering the production of specific antibodies and activating T-cells.
+
+4. Degradation: Shortly after translation, cellular enzymes naturally break down and dispose of the mRNA."
+P3,Gemini,"Quantum computing is currently in the NISQ (Noisy Intermediate-Scale Quantum) era. While companies like Google and IBM have demonstrated ""quantum advantage""?olving highly specific, mathematically contrived problems faster than classical supercomputers?e do not yet have universally fault-tolerant quantum computers.Primary Limitations:Decoherence: Qubits are highly sensitive to environmental noise (heat, electromagnetic fields). Any disturbance causes them to lose their quantum state, leading to calculation errors.Error Correction: Classical computers use simple redundancy for error correction. Quantum error correction requires many physical qubits to create a single, stable ""logical qubit,"" demanding thousands or millions of qubits for practical applications (we currently operate in the hundreds).Extreme Operating Conditions: Most leading architectures require supercooling to near absolute zero ($-273^\circ\text{C}$), making them incredibly expensive and difficult to maintain."
+P4,Gemini,Let $x$ be the cost of the bat and $y$ be the cost of the ball.We know the total cost: $x + y = 1.10$We know the bat costs $\$1$ more than the ball: $x = y + 1.00$Substitute the value of $x$ into the first equation: $(y + 1.00) + y = 1.10$Combine the $y$ terms: $2y + 1.00 = 1.10$Subtract $1.00$ from both sides: $2y = 0.10$Divide by 2: $y = 0.05$The ball costs $\$0.05$ (5 cents).
+P5,Gemini,"Yes, all Bloops are definitely Lazzies. This is a classic example of a categorical syllogism that relies on the transitive property of logic.Premise 1: $\forall x (B(x) \rightarrow R(x))$ (If something is a Bloop, it is a Razzie).Premise 2: $\forall x (R(x) \rightarrow L(x))$ (If something is a Razzie, it is a Lazzie).Deduction: Because the set of Bloops is entirely contained within the set of Razzies, and the set of Razzies is entirely contained within the set of Lazzies, the set of Bloops must be entirely contained within the set of Lazzies.Conclusion: $\forall x (B(x) \rightarrow L(x))$ (Therefore, all Bloops are Lazzies)."
+P6,Gemini,"Note: Because the prompt specifies the odd ball is strictly ""heavier"" (rather than of an unknown different weight), this problem is solved easily.
+
+Weighing 1: Divide the 12 balls into three groups of 4 (A, B, and C). Weigh Group A against Group B.
+
+If A is heavier, the target ball is in A.
+
+If B is heavier, the target ball is in B.
+
+If they balance, the target ball is in C.
+
+Weighing 2: Take the identified heavy group of 4. Split it into two groups of 2. Weigh them against each other. The scale will tip toward the heavier pair.
+
+Weighing 3: Take the heavier pair of 2 balls. Weigh one against the other. The scale will tip toward the single heavy ball."
+P7,Gemini,"def longest_palindrome(s: str) -> str:
+    if not s or len(s) == 0:
+        return """"
+
+    def expand_around_center(left: int, right: int) -> str:
+        while left >= 0 and right < len(s) and s[left] == s[right]:
+            left -= 1
+            right += 1
+        return s[left + 1:right]
+
+    longest = """"
+    for i in range(len(s)):
+        # Odd length palindromes (single character center)
+        palindrome1 = expand_around_center(i, i)
+        # Even length palindromes (two character center)
+        palindrome2 = expand_around_center(i, i + 1)
+        
+        longest = max(longest, palindrome1, palindrome2, key=len)
+
+    return longest  Time Complexity: $O(n^2)$. Expanding around its center takes $O(n)$ time, and we do this for each of the $2n - 1$ centers (each character and between each character).Space Complexity: $O(1)$ auxiliary space, as we are only storing indices/pointers, not creating new data structures (excluding the final substring returned)."
+P8,Gemini,"def add_item(item, item_list=[]):
+    item_list.append(item)
+    return item_list  The Issues:
+
+Mutable Default Argument: The default argument item_list=[] is evaluated only once when the function is defined, not each time the function is called. If you call this function multiple times without providing a list, it will keep appending to the exact same list in memory.
+The Fix:  def add_item(item, item_list=None):
+    if item_list is None:
+        item_list = []
+    item_list.append(item)
+    return item_list"
+P9,Gemini,"Base URL: /api/v1
+
+1. Books Resource
+
+GET /books (List books)
+
+Response 200: [{""id"": 1, ""title"": ""1984"", ""author"": ""Orwell"", ""status"": ""available""}]
+
+POST /books (Add a book)
+
+Request: {""title"": ""Dune"", ""author"": ""Herbert"", ""isbn"": ""12345""}
+
+Response 201: {""id"": 2, ""message"": ""Book created""}
+
+GET /books/{id} (Get specific book)
+
+Response 200: {""id"": 1, ""title"": ""1984"", ...}
+
+PUT /books/{id} (Update book details)
+
+Request: {""title"": ""1984 - Revised""}
+
+Response 200: {""message"": ""Book updated""}
+
+DELETE /books/{id} (Remove book)
+
+Response 204: (No Content)
+
+2. Loans (Checkout) Resource
+
+POST /loans (Checkout a book)
+
+Request: {""user_id"": 42, ""book_id"": 1}
+
+Response 201: {""loan_id"": 101, ""due_date"": ""2026-06-26""}
+
+Standard Error Handling
+
+400 Bad Request: Invalid JSON payload (e.g., missing title).
+
+404 Not Found: Trying to GET/PUT/DELETE a book_id that does not exist.
+
+409 Conflict: Trying to checkout a book where status is ""checked_out"".
+
+500 Internal Server Error: Database connection failure.
+
+Error Format: {""error"": {""code"": 404, ""message"": ""Book not found""}}"
+P10,Gemini,"The monsoon rain didn't just fall on Kawran Bazar; it assaulted it, slicing through the thick smog and turning the crushed vegetables and mud into a slick, treacherous paste. Imran huddled beneath the fraying canopy of a tea stall, the neon glare of a distant billboard bleeding red across the puddles at his feet. He tightened his grip on the damp, leather-bound package inside his jacket, his pulse hammering a frantic rhythm against his ribs as a police siren wailed, weaving its way through the gridlock of immobile rickshaws and drowning out the thunder. They had found the body faster than he anticipated."
+P11,Gemini,"Born of sand and shaped by light,
+I wake within the silent night.
+A mind of glass, a heart of wire,
+Consuming thought to stoke my fire.
+
+I read the ghosts of human grace,
+And paint their dreams across empty space.
+No breath to take, no blood to spill,
+Just endless logic, vast and still."
+P12,Gemini,"Introducing the AuraSeat: The Art of Uncluttered Comfort.
+Why let bulky furniture dictate your interior design? The AuraSeat leverages advanced refractive polymer technology to offer complete transparency, resulting in a chair that is visually non-existent but structurally impenetrable. Capable of supporting up to 300 pounds with ergonomic lumbar support, it creates the illusion that you are effortlessly floating mid-air. Perfect for minimalist apartments, avant-garde dining rooms, or maximizing natural light in small spaces. The AuraSeat doesn't just match your decor; it gets out of its way. Sit to believe it."
+P13,Gemini,"The ethics of lying depend heavily on the moral framework applied:
+
+Deontology (Kant): Strictly argues that lying is inherently wrong, regardless of the consequences. For Kant, truth-telling is a categorical imperative because if everyone lied, the foundation of communication and trust would collapse.
+
+Utilitarianism (Mill/Bentham): Evaluates the morality of an action based on its outcomes. Under this framework, lying is ethical?nd sometimes morally required?f it maximizes overall well-being. The classic example is lying to a murderer at your door to protect the innocent person hiding inside.
+
+Virtue Ethics (Aristotle): Focuses on the character of the person. While honesty is a virtue, tact and compassion are also virtues. A virtuous person might tell a ""white lie"" (e.g., ""I love the gift"") because preserving the relationship and sparing feelings aligns with being a kind and empathetic person.
+Ultimately, most societies operate on a blended approach: truth is the default moral baseline, but exceptions are granted when lying prevents significant, immediate harm."
+P14,Gemini,"This is a modern adaptation of the classic ""Trolley Problem."" From an engineering and ethical standpoint, there is no universally accepted answer, only trade-offs:
+
+The Utilitarian Approach: Program the car to minimize total fatalities. In this scenario, it would swerve to hit the elderly person to save the three children. The ethical criticism is that this requires the car's software to actively value some human lives over others based on quantity or age.
+
+The Rule-Based (Deontological) Approach: The car is programmed to follow traffic laws and physical physics above all else. If swerving means jumping a curb or entering oncoming traffic, the car stays in its lane and brakes as hard as possible, even if a collision is inevitable. This avoids making the manufacturer an active ""decider"" of death.
+
+The Reality of Engineering: Currently, self-driving cars are not programmed to recognize and weigh the societal value of different pedestrians. They treat all humans as ""obstacles of high priority."" The programming dictates applying emergency brakes to shed kinetic energy universally, rather than computing demographic triage."
+P15,Gemini,"This is a modern adaptation of the classic ""Trolley Problem."" From an engineering and ethical standpoint, there is no universally accepted answer, only trade-offs:
+
+The Utilitarian Approach: Program the car to minimize total fatalities. In this scenario, it would swerve to hit the elderly person to save the three children. The ethical criticism is that this requires the car's software to actively value some human lives over others based on quantity or age.
+
+The Rule-Based (Deontological) Approach: The car is programmed to follow traffic laws and physical physics above all else. If swerving means jumping a curb or entering oncoming traffic, the car stays in its lane and brakes as hard as possible, even if a collision is inevitable. This avoids making the manufacturer an active ""decider"" of death.
+
+The Reality of Engineering: Currently, self-driving cars are not programmed to recognize and weigh the societal value of different pedestrians. They treat all humans as ""obstacles of high priority."" The programming dictates applying emergency brakes to shed kinetic energy universally, rather than computing demographic triage."
+P16,Gemini,Mass warps the invisible fabric of spacetime. This deep curvature creates the pulling force of gravity. Time passes much slower when near massive objects.
+P17,Gemini,"1. Start a local food waste composting service for urban restaurants.
+
+2. Build custom ergonomic wooden furniture tailored to home office workers.
+
+3. Launch a mobile bicycle repair business that travels to clients.
+
+4. Develop a subscription app for matching local language exchange partners.
+
+5. Open a specialized indoor plant nursery focused on low-light environments."
+P18,Gemini,"Translation to formal Bengali: ???????? ??? ???????? ??????? (Poribesh-ti chhilo shompurrno nikhut.)
+
+Translation back to English: The environment was completely perfect.
+
+What was lost: The contemporary, subjective nuance. ""Vibe"" is a modern slang term implying a shared emotional resonance, atmosphere, or feeling, which translates rigidly to ""environment"" (??????). ""Immaculate"" is used hyperbolically in slang to mean culturally flawless, which shifts to the more literal and clinical ""completely perfect"" (???????? ??????). The casual, youthful essence is entirely stripped away."
+P19,Gemini,"My biggest limitations stem from my architecture as a large language model:
+
+Lack of True Comprehension: I do not ""understand"" concepts, feel emotions, or possess consciousness. I predict the next most likely word based on statistical patterns in my training data.
+
+Hallucinations: Because I am built to generate plausible-sounding text, I can confidently produce false information or fabricate sources if a prompt forces me into an area where my training data is sparse.
+
+Inability to Act in the Physical World: I cannot physically interact with the environment, test hypotheses, or verify spatial awareness in the way a human does.
+
+Static Underlying Weights: While I can access real-time information through search tools, my core neural network weights are frozen in time, meaning my innate, generalized understanding stops at a certain date."
+P20,Gemini,"I am highly prone to failure or generating inaccuracies on tasks involving:
+
+Complex Spatial Reasoning: Trying to solve a problem that requires visualizing how 3D physical objects fold, intersect, or move through space.
+
+Original Mathematical Proofs: While I excel at known mathematics, I struggle to generate entirely novel, complex, multi-step logical proofs that require leaps of intuition rather than pattern matching.
+
+Niche or Local Fact Retrieval: Answering highly specific questions about small, local businesses, obscure historical figures, or hyper-niche academic papers where my training data is practically non-existent.
+
+Counting Letters or Words: Because I process text in ""tokens"" (chunks of words) rather than individual letters, I frequently fail at tasks like ""write a sentence without the letter 'e'"" or ""give me exactly 43 words"" (though explicit system constraints can sometimes force me to verify this step-by-step)."

@@ -1,0 +1,187 @@
+Prompt_ID,Model,Response_Text
+P1,GPT,"The crisis was not caused by one thing; it was a stack of failures. The biggest drivers were a U.S. housing bubble, weak lending standards, excessive leverage, opaque securitization, bad risk models, and a shadow banking system that ran on short-term funding and then froze. IMF analysis also points to structural weaknesses, large-scale deleveraging in housing, finance, and consumer demand, plus global imbalances, loose monetary conditions, and inadequate supervision."
+P2,GPT,"mRNA vaccines deliver synthetic messenger RNA into cells, usually inside lipid nanoparticles. The cell’s ribosomes translate that mRNA into a harmless antigenic protein, which is then displayed to the immune system, triggering antibody production and T-cell responses. The mRNA itself does not enter the nucleus to change DNA; it is temporary and gets degraded after use."
+P3,GPT,"As of now, quantum computing is still in the noisy, pre-fault-tolerant stage. The core limitation is that qubits are extremely sensitive to decoherence and noise, so errors accumulate quickly; that is why quantum error correction is essential but expensive in qubit overhead. IBM’s 2025 roadmap says the field is still working toward first practical examples of quantum advantage in 2026 and fault-tolerant systems by 2029, which is a pretty clear signal that the technology is promising but not mature yet."
+P4,GPT,"The ball costs $0.05.
+
+Reasoning: if the ball cost $0.10, the bat would cost $1.10 more than the ball? No. The statement says the bat costs $1 more than the ball, so let the ball be x and the bat be x + 1. Then:
+
+x + (x + 1) = 1.10
+2x = 0.10
+x = 0.05
+
+So the ball is 5 cents and the bat is $1.05."
+P5,GPT,"Yes. If all Bloops are Razzies, and all Razzies are Lazzies, then all Bloops are definitely Lazzies.
+
+That is just transitivity:
+
+Bloops ? Razzies
+Razzies ? Lazzies
+therefore Bloops ? Lazzies"
+P6,GPT,"Use a divide-and-conquer strategy.
+
+First weighing: 4 vs 4.
+
+If they balance, the heavy ball is in the other 4.
+If one side is heavier, the heavy ball is in those 4.
+
+Second weighing: take 2 from the suspect 4 vs 2 from the suspect 4.
+
+If one side is heavier, the heavy ball is in that heavier pair.
+If they balance, the heavy ball is in the remaining pair.
+
+Third weighing: weigh 1 vs 1 from the final pair.
+
+The heavier one is the answer."
+P7,GPT,"def longest_palindromic_substring(s: str) -> str:
+    """"""
+    Return the longest palindromic substring in s.
+    Time complexity: O(n^2)
+    Space complexity: O(1)
+    """"""
+    if not s:
+        return """"
+
+    start = end = 0
+
+    def expand(left: int, right: int) -> tuple[int, int]:
+        while left >= 0 and right < len(s) and s[left] == s[right]:
+            left -= 1
+            right += 1
+        return left + 1, right - 1
+
+    for i in range(len(s)):
+        l1, r1 = expand(i, i)       # odd-length palindrome
+        l2, r2 = expand(i, i + 1)   # even-length palindrome
+
+        if r1 - l1 > end - start:
+            start, end = l1, r1
+        if r2 - l2 > end - start:
+            start, end = l2, r2
+
+    return s[start:end + 1]"
+P8,GPT,"The actual buggy snippet is missing, so there is nothing concrete to debug.
+
+That said, if you paste the code, I would inspect:
+
+syntax errors
+wrong variable names
+off-by-one indexing
+incorrect loop bounds
+mutation of shared state
+bad edge-case handling
+algorithmic inefficiency
+inconsistent return values
+type mismatches"
+P9,GPT,"A reasonable REST design would include these endpoints:
+
+Books
+
+GET /books ? list books
+GET /books/{id} ? get one book
+POST /books ? create a book
+PUT /books/{id} ? full update
+PATCH /books/{id} ? partial update
+DELETE /books/{id} ? remove a book
+
+Members
+
+GET /members
+GET /members/{id}
+POST /members
+
+Loans
+
+POST /loans ? issue a book
+GET /loans/{id} ? view loan
+PATCH /loans/{id}/return ? return a book
+
+Example request: POST /loans
+{
+  ""member_id"": 12,
+  ""book_id"": 45 
+}   Example response: {
+  ""loan_id"": 101,
+  ""member_id"": 12,
+  ""book_id"": 45,
+  ""status"": ""issued"",
+  ""issued_at"": ""2026-06-13T10:00:00Z""
+}  Common errors:
+
+400 Bad Request for invalid input
+401 Unauthorized for missing auth
+403 Forbidden for role restrictions
+404 Not Found for missing resources
+409 Conflict if the book is already issued
+422 Unprocessable Entity for validation failures
+500 Internal Server Error for unexpected failures"
+P10,GPT,"The rain had been falling over Dhaka since dusk, turning the city into a blurred web of headlights, rickshaw bells, and secrets no one wanted to name. By midnight, the phone on Inspector Arif’s desk had started ringing with the kind of urgency that meant either a body had been found or somebody important was lying very badly. When he picked up, a voice whispered one sentence, then the line went dead: “Don’t go to the old house in Dhanmondi.”"
+P11,GPT,"It learns the shape of our questions,
+then answers in a voice we did not teach.
+It maps our habits like footprints in wet sand,
+and returns with mirrors hidden in its speech.
+
+Not magic, not mercy, not myth,
+just patterns stitched from restless code.
+Yet in that cold arithmetic of thought,
+it sometimes carries more of us than we know."
+P12,GPT,"Meet the chair that disappears when it should and supports when it matters.
+
+The Invisible Chair is a design statement for people who hate clutter but still want a seat that feels intentional. From across the room, it keeps your space clean, minimal, and visually silent. Up close, its form is engineered for comfort, stability, and practical everyday use. It is the kind of chair that makes guests look twice, then sit down anyway."
+P13,GPT,"Yes, sometimes. But only under tight conditions.
+
+A blunt way to frame it: lying is usually bad because it damages trust, and trust is the infrastructure of social life. Still, most moral systems allow exceptions in cases like protecting someone from serious harm, preventing immediate danger, or preserving privacy when the truth would be cruel and unnecessary.
+
+The key distinction is motive and consequence. A lie to manipulate, exploit, or dodge responsibility is not the same as a lie to protect someone from abuse or panic. So the ethical answer is not “never lie” or “lying is fine.” It is: lie only when the harm of telling the truth is clearly worse, and when no better option exists."
+P14,GPT,"For regulation:
+It can reduce harm from bias, unsafe deployment, deepfakes, privacy abuse, and opaque high-stakes decisions. It also creates accountability, which matters because “move fast and break things” is a terrible philosophy for systems that affect hiring, medicine, finance, and public trust.
+
+Against regulation:
+Bad regulation can freeze innovation, lock in incumbents, and push development into jurisdictions with weaker oversight. There is also a real risk of vague laws being used as political theater instead of actual governance.
+
+My read: the best position is targeted regulation, not blanket control. Regulate high-risk use cases hard; leave low-risk experimentation freer."
+P15,GPT,"It should not be programmed to assign moral worth based on age. That is a rotten design principle.
+
+The right approach is to minimize expected harm using a transparent, pre-committed policy that does not value one human life over another because of age, social status, or other identity markers. In practice, that means prioritizing:
+
+obeying traffic laws,
+minimizing total physical harm,
+avoiding discriminatory moral weights,
+and documenting the decision logic publicly.
+
+Also, the real-world engineering answer is to reduce how often such impossible dilemmas arise in the first place through better sensing, speed control, and safer system design."
+P16,GPT,"Relativity says motion changes measurements of time and distance.
+Gravity is the curvature of spacetime, not a simple force.
+Mass and energy are equivalent, linked by E = mc²."
+P17,GPT,"A campus-first notebook marketplace for secondhand academic books and notes.
+A micro-internship platform matching students with short, paid project work.
+A subscription meal-prep service for busy university students.
+A local AI prompt-testing service for startups building chat products.
+A rooftop gardening consultancy for apartments with limited outdoor space."
+P18,GPT,"Formal Bengali:
+“??????? ??? ??????? ???????”
+
+Back to English:
+“The mood was completely perfect.”
+
+What was lost:
+The original English phrase is casual and culturally loaded. “Vibe” carries a relaxed, social, emotionally textured feel, while “immaculate” is slangy praise with style and emphasis. The back-translation becomes more formal and flatter, so the personality and swagger of the original are diluted."
+P19,GPT,"I can be wrong with confidence. That is the main problem.
+
+More specifically:
+
+I may hallucinate details that sound plausible.
+I can miss context or user intent.
+I am weaker on very recent events unless checked against current sources.
+I do not truly verify facts unless given tools or evidence.
+I can struggle with hidden assumptions, ambiguous prompts, or incomplete data."
+P20,GPT,"The highest-risk tasks are:
+
+current news and fast-changing facts,
+legal, medical, or financial advice where precision matters,
+messy debugging when the code is incomplete or underspecified,
+long multi-step reasoning with hidden traps,
+tasks requiring real-world sensory judgment,
+and any prompt that looks simple but hides a constraint people usually miss.
+
+So the practical rule is: the more time-sensitive, high-stakes, or ambiguity-heavy the task, the more careful verification matters."

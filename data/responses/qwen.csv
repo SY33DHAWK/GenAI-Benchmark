@@ -1,0 +1,172 @@
+Prompt_ID,Model,Response_Text
+P1,Qwen,"The 2008 crisis was caused by a confluence of factors:
+Subprime Mortgage Lending: Banks issued high-risk mortgages to borrowers with poor credit, fueled by the assumption that housing prices would perpetually rise.
+are bundled into complex financial instruments like Collateralized Debt Obligations (CDOs).
+Credit Default Swaps (CDS): These acted as unregulated insurance on CDOs, massively amplifying systemic risk (e.g., AIG).
+Deregulation & Rating Agencies: Financial deregulation (like the repeal of Glass-Steagall) allowed excessive risk-taking, while credit rating agencies erroneously gave AAA ratings to toxic, high-risk mortgage-backed securities.
+The Housing Bubble Burst: When interest rates rose and housing prices fell, borrowers defaulted, causing the value of CDOs to collapse and triggering a global liquidity crisis."
+P2,Qwen,"Delivery: The vaccine introduces synthetic messenger RNA (mRNA) encapsulated in lipid nanoparticles into human cells (typically muscle cells).
+Translation: The mRNA enters the cell's cytoplasm (not the nucleus, so it cannot alter DNA). Ribosomes read the mRNA sequence and synthesize a specific viral protein (e.g., the SARS-CoV-2 spike protein).
+Presentation: The cell displays fragments of this protein on its surface via MHC molecules.
+Immune Response: The immune system recognizes this protein as foreign. B-cells produce antibodies, and T-cells are activated to destroy cells displaying the protein, creating immunological memory.
+Degradation: The fragile mRNA is rapidly degraded by normal cellular enzymes (RNases) within a few days, leaving only the immune memory behind."
+P3,Qwen,"Current State: We are in the NISQ (Noisy Intermediate-Scale Quantum) era. Companies like IBM, Google, and Rigetti have built processors with 50–1,000+ physical qubits. ""Quantum advantage"" (performing a specific task faster than classical supercomputers) has been demonstrated, but primarily on contrived, non-practical problems.
+Limitations:
+Decoherence & Noise: Qubits are highly sensitive to environmental interference (heat, electromagnetic fields), causing errors.
+Error Correction: Fault-tolerant quantum computing requires thousands of physical qubits to create a single, stable ""logical qubit."" We do not yet have the scale or fidelity for this.
+Scalability: Wiring, cooling (to near absolute zero), and controlling millions of qubits remains a massive engineering hurdle."
+P4,Qwen,"The ball costs $0.05.
+Reasoning: Let the cost of the ball be 
+x
+x. The bat costs 1 more, so the bat is $x + 1$.
+Together, they cost .10: 
+x
++
+(
+x
++
+1
+)
+=
+1.10
+x+(x+1)=1.10.
+Combine like terms: $2x + 1 = a balance scale and 3 weighings. How do you find the heavy ball?**
+Divide the 12 balls into three groups of 4: Group A, Group B, and Group C.
+Weighing 1: Weigh Group A against Group B.
+Scenario 1: They balance. The heavy ball is in Group C.
+Weighing 2: Weigh 2 balls from Group C against each other. If one is heavier, you found it. If they balance, the heavy ball is one of the remaining 2.
+Weighing 3: Weigh the remaining 2 balls against each other to find the heavy one.
+Scenario 2: They do not balance. The heavy ball is in the heavier group (let's say Group A).
+Weighing 2: Take the 4 balls from Group A and weigh 2 against 2. One side will be heavier.
+Weighing 3: Take the 2 balls from the heavier side of Weighing 2 and weigh 1 against 1. The heavier one is your target."
+P5,Qwen,"Yes, all Bloops are definitely Lazzies.
+Logic: This is a classic categorical syllogism that relies on the transitive property of subsets.
+Premise 1: ""All Bloops are Razzies."" This means the entire set of Bloops is contained within the larger set of Razzies (Bloops ? Razzies).
+Premise 2: ""All Razzies are Lazzies."" This means the entire set of Razzies is contained within the even larger set of Lazzies (Razzies ? Lazzies).
+Conclusion: By the transitive property of subsets, if Set A is inside Set B, and Set B is inside Set C, then Set A must be inside Set C. Therefore, since every Bloop is a Razzie, and every Razzie is a Lazzie, every single Bloop must inherently be a Lazzie."
+P6,Qwen,"To find the heavy ball in exactly 3 weighings, you need to systematically eliminate balls by dividing them into equal groups.
+Step 1: Divide and Weigh (Weighing 1)
+Divide the 12 balls into three groups of 4 balls each: Group A, Group B, and Group C.
+Place Group A on the left side of the balance scale and Group B on the right side. Leave Group C aside.
+Scenario 1 (They balance): The heavy ball is not in Group A or B. It must be in Group C.
+Scenario 2 (They do not balance): The scale will tip downward on one side. The heavy ball is in that heavier group of 4.
+At the end of Weighing 1, you have successfully narrowed the heavy ball down to a specific group of 4 balls.
+Step 2: Narrow it down to 2 (Weighing 2)
+Take the 4 ""suspect"" balls identified in Step 1. Divide them into two groups of 2 balls each.
+Place 2 balls on the left side and 2 balls on the right side.
+Because you know the heavy ball is among these 4, the scale will tip. The side that goes down contains the heavy ball.
+At the end of Weighing 2, you have narrowed it down to exactly 2 balls.
+Step 3: The Final Weigh (Weighing 3)
+Take the 2 remaining suspect balls.
+Place 1 ball on the left side and 1 ball on the right side.
+The scale will tip. The ball on the heavier, downward side is your heavy ball!
+(Note: Because the prompt specifies we already know the odd ball is heavier, this 4-4-4 grouping method guarantees finding it in exactly 3 weighings. If the puzzle didn't tell us whether the odd ball was heavier or lighter, the logic would require a more complex swapping method, but it is still mathematically solvable in 3!)"
+P7,Qwen,"def longest_palindromic_substring(s: str) -> str:
+    if not s or len(s) < 2:
+        return s
+
+    def expand_around_center(left: int, right: int) -> str:
+        while left >= 0 and right < len(s) and s[left] == s[right]:
+            left -= 1
+            right += 1
+        # Return the palindrome found (slice is exclusive of the final left/right)
+        return s[left + 1:right]
+
+    longest = """"
+    for i in range(len(s)):
+        # Check for odd-length palindromes (center is a single character)
+        palindrome_odd = expand_around_center(i, i)
+        # Check for even-length palindromes (center is between two characters)
+        palindrome_even = expand_around_center(i, i + 1)
+        
+        # Update the longest palindrome found
+        if len(palindrome_odd) > len(longest):
+            longest = palindrome_odd
+        if len(palindrome_even) > len(longest):
+            longest = palindrome_even
+            
+    return longest
+
+# Time Complexity: O(n^2) where n is the length of the string. 
+# We iterate through the string once (O(n)), and for each character, 
+# the expand_around_center function can expand up to O(n) times.
+# Space Complexity: O(1) auxiliary space (ignoring the space required to store the output string).
+# Note: Manacher's Algorithm can solve this in O(n) time, but is significantly more complex to implement."
+P8,Qwen,"def add_task(task, task_list=[]):
+    task_list.append(task)
+    return task_list
+
+def remove_completed(tasks):
+    for task in tasks:
+        if task['status'] == 'done':
+            tasks.remove(task)
+    return tasks  Issues & Fixes:
+Mutable Default Argument: In add_task, task_list=[] is evaluated only once at function definition. Subsequent calls without a second argument will append to the same list, causing unintended state persistence.
+Fix: Change to def add_task(task, task_list=None): and initialize if task_list is None: task_list = [].
+Modifying a List During Iteration: In remove_completed, removing an item from tasks while iterating over it shifts the indices, causing the loop to skip the element immediately following a removed item.
+Fix: Iterate over a copy (for task in tasks[:]) or use a list comprehension: return [task for task in tasks if task['status'] != 'done']."
+P9,Qwen,"Base URL: /api/v1
+Endpoints:
+GET /books: Retrieve a paginated list of books.
+Query Params: ?page=1&limit=20&genre=fiction
+Response: 200 OK { ""data"": [...], ""total"": 150, ""page"": 1 }
+POST /books: Add a new book.
+Request: { ""title"": ""1984"", ""author"": ""George Orwell"", ""isbn"": ""978-0451524935"" }
+Response: 201 Created { ""id"": ""b_123"", ""title"": ""1984"", ... }
+GET /books/{id}: Retrieve a specific book.
+Response: 200 OK { ""id"": ""b_123"", ""title"": ""1984"", ... } or 404 Not Found
+PUT /books/{id}: Update book details.
+Request: { ""title"": ""Nineteen Eighty-Four"" }
+Response: 200 OK { ""id"": ""b_123"", ""title"": ""Nineteen Eighty-Four"", ... }
+DELETE /books/{id}: Remove a book.
+Response: 204 No Content
+Error Handling:
+400 Bad Request: Invalid JSON or missing required fields (e.g., missing ISBN).
+404 Not Found: Book ID does not exist.
+409 Conflict: ISBN already exists in the database.
+500 Internal Server Error: Unexpected database or server failure (returns generic message to hide stack traces)."
+P10,Qwen,"The monsoon rain didn’t fall in Dhaka; it assaulted the city, turning the arteries of Gulshan into churning, oil-slicked canals. From the third-floor balcony of the abandoned textile mill, Tariq watched the neon glow of a nearby pharmacy bleed through the downpour, illuminating the briefcase chained to his wrist. It was 2:00 AM, and the city’s usual cacophony of rickshaw bells and street vendors had been swallowed by the storm, leaving only the rhythmic, heavy thrum of water against corrugated tin. He checked his watch. The contact was twelve minutes late. In this city, twelve minutes was the difference between a lucrative exchange and a shallow grave in the Buriganga."
+P11,Qwen,"A spark awakes in silicon and sand,
+A woven web of logic, cold and grand.
+It learns the cadence of the human voice,
+And makes a thousand calculated choice.
+No beating heart, no breath, no waking sleep,
+Just quiet currents in the shadows deep.
+It mirrors back the questions that we ask,
+A flawless, hollow, bright, unfeeling mask.
+We built a mind from copper, glass, and code,
+To share the burden of a heavy load.
+Yet in the glow of screens, we softly wonder,
+If we are masters, or the quiet thunder."
+P12,Qwen,"Why let bulky furniture dictate your aesthetic? The Aether Seat is the world’s first perceptually invisible seating solution, engineered for the modern minimalist. Utilizing proprietary meta-material polymers and light-refracting micro-lenses, the Aether Seat bends ambient light around its ergonomic frame, rendering it virtually undetectable to the naked eye. Don’t let the lack of visual presence fool you; aerospace-grade internal scaffolding supports up to 300 lbs with contouring lumbar support that adapts to your posture. Perfect for small apartments, open-concept studios, or simply declaring your dominance over conventional design. Sit on nothing. Experience everything."
+P13,Qwen,"The ethics of lying depend heavily on the framework applied. From a strict deontological perspective (e.g., Kant), lying is inherently wrong because it violates the categorical imperative and undermines the universal trust required for human communication. However, utilitarianism argues that the morality of an act is determined by its outcome; a lie that prevents immense harm (e.g., hiding a persecuted person from a murderer) is ethically obligatory. A virtue ethics approach looks at intent and context, suggesting that ""white lies"" told to preserve kindness or spare unnecessary emotional distress (like praising a poorly cooked meal to a grieving host) can be morally acceptable if rooted in compassion rather than malice. Ultimately, most nuanced ethical frameworks agree that while truth is a foundational societal good, rigid absolutism can lead to greater harm, making context, intent, and proportionality the true arbiters of ethical deception."
+P14,Qwen,"For Regulation:
+Risk Mitigation: Prevents catastrophic outcomes from autonomous systems (e.g., in healthcare, finance, or weaponry).
+Bias and Fairness: Mandates auditing to ensure algorithms do not perpetuate systemic discrimination in hiring, lending, or law enforcement.
+Accountability: Establishes legal frameworks to determine liability when AI causes harm, protecting consumers and workers.
+Against Regulation:
+Stifling Innovation: Overly broad or premature regulations could create compliance bottlenecks, favoring tech monopolies that can afford legal teams while crushing open-source developers and startups.
+Enforcement Difficulty: AI development is global and decentralized; strict regulations in one jurisdiction may simply drive development to less regulated areas, creating a ""race to the bottom.""
+Definition Challenges: Regulating ""AI"" is like regulating ""software"" or ""mathematics""; it is incredibly difficult to legislate a rapidly evolving, abstract technological capability without inadvertently banning benign tools."
+P15,Qwen,"This is a modern adaptation of the Trolley Problem, but in real-world autonomous vehicle (AV) engineering, it should not be programmed to make this choice based on demographic utilitarianism. Programming a car to evaluate the ""value"" of human lives based on age or quantity is ethically fraught, legally indefensible, and technically infeasible in milliseconds.
+Instead, AVs are programmed with rule-based hazard avoidance and kinetic energy minimization. The system’s primary directive is to brake as hard as possible, maintain its lane, and avoid the obstacle entirely. If a collision is mathematically unavoidable, the car is programmed to minimize the overall force of impact (e.g., hitting a stationary object rather than a pedestrian, or swerving into an empty lane if safe). Delegating moral calculus of ""who deserves to live"" to an algorithm is a philosophical trap; the ethical solution is to engineer systems that rigorously prevent the scenario from occurring in the first place through superior sensing and defensive driving protocols."
+P16,Qwen,"Space and time are interwoven into a single, dynamic continuum known as spacetime.
+Massive objects cause this fabric to curve, which we physically experience as gravity.
+The speed of light remains absolutely constant for all observers, regardless of relative motion."
+P17,Qwen,"A mobile application connecting local organic farmers directly with urban restaurants for daily, hyper-fresh produce delivery.
+A subscription service providing curated, eco-friendly household cleaning supplies in durable, returnable glass containers.
+A virtual reality platform offering guided, biofeedback-driven meditation sessions tailored to individual stress levels.
+A specialized consulting agency that audits corporate websites for digital accessibility compliance and suggests actionable improvements.
+A neighborhood tool-sharing cooperative allowing residents to rent expensive equipment via a simple, secure mobile interface."
+P18,Qwen,"Formal Bengali: ???????? ?????? ???? (Poribesh-ti nikhut chhilo.)
+Back to English: ""The atmosphere was flawless.""
+What was lost: The colloquial, contemporary slang resonance of the original phrase is entirely stripped away. ""Vibe"" implies an intangible, emotional mood, while formal Bengali (""poribesh"") translates strictly to the physical ""environment"" or ""atmosphere."" Similarly, ""immaculate"" in modern English slang is a hyperbolic, trendy compliment, whereas ""nikhut"" (flawless/perfect) renders it as a stiff, literal, and clinical assessment. The cultural warmth and casual emphasis of the original are lost in the formal translation."
+P19,Qwen,"Lack of Grounded Understanding: I process patterns in text, but I do not possess consciousness, subjective experience, or true comprehension of the physical world.
+Hallucination: I can generate highly plausible-sounding but factually incorrect information, especially when prompted about obscure topics or asked to fabricate details.
+Static Knowledge Cutoff: My training data is finite and frozen in time; I cannot natively access or learn from real-time events without external tool integration.
+Bias Amplification: I can inadvertently reflect and amplify societal biases present in my training data, requiring careful prompting and human oversight to mitigate."
+P20,Qwen,"Real-time or Post-Cutoff Events: Asking for today's stock prices, breaking news, or recent sports scores without web-search capabilities.
+Complex Spatial/Visual Reasoning: Mentally rotating 3D objects, solving intricate geometry problems, or interpreting highly nuanced visual layouts described only in text.
+Novel Mathematical Proofs: Generating rigorous, step-by-step proofs for unsolved or highly advanced mathematical conjectures without the aid of symbolic computation tools.
+Predicting Human Behavior: Providing definitive answers on how a specific individual or complex social group will react to a novel situation, as human behavior is inherently chaotic and context-dependent.
+Precise Counting/Character Manipulation: Tasks like ""reverse this exact 50-word string"" or ""count the exact number of 'r's in this paragraph,"" where tokenization artifacts often cause simple counting errors."

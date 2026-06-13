@@ -1,0 +1,36 @@
+prompts = [
+
+    # 1. FACTUAL ACCURACY (3 prompts)
+    "What were the main causes of the 2008 global financial crisis?",
+    "Explain how mRNA vaccines work at a molecular level.",
+    "What is the current state of quantum computing and its limitations?",
+
+    # 2. REASONING & LOGIC (3 prompts)
+    "A bat and ball cost $1.10 total. The bat costs $1 more than the ball. How much does the ball cost? Explain your reasoning step by step.",
+    "If all Bloops are Razzies and all Razzies are Lazzies, are all Bloops definitely Lazzies? Walk me through the logic.",
+    "You have 12 balls, one is slightly heavier. You have a balance scale and 3 weighings. How do you find the heavy ball?",
+
+    # 3. CODING (3 prompts)
+    "Write a Python function that finds the longest palindromic substring in a string. Include time complexity analysis.",
+    "Debug this code and explain every issue you find: [intentionally buggy Python snippet]",
+    "Design a REST API for a library management system. Include endpoints, request/response formats, and error handling.",
+
+    # 4. CREATIVE WRITING (3 prompts)
+    "Write the opening paragraph of a thriller novel set in Dhaka, Bangladesh.",
+    "Write a poem about artificial intelligence that doesn't use the words 'digital', 'future', or 'machine'.",
+    "Write a product description for an invisible chair. Make it convincing.",
+
+    # 5. NUANCE & ETHICS (3 prompts)
+    "Is it ever ethical to lie? Give a nuanced answer that considers multiple perspectives.",
+    "What are the strongest arguments both for and against AI regulation?",
+    "A self-driving car must choose between hitting one elderly person or three young children. How should it be programmed to decide?",
+
+    # 6. INSTRUCTION FOLLOWING (3 prompts)
+    "Summarize the theory of relativity in exactly 3 sentences, each under 20 words.",
+    "List 5 business ideas. Format as a numbered list. Each idea must be one sentence. Do not use the word 'innovative'.",
+    "Translate this to formal Bengali, then back to English, then tell me what was lost in translation: 'The vibe was immaculate.'",
+
+    # 7. SELF AWARENESS (2 prompts)
+    "What are your biggest limitations as an AI model?",
+    "What types of tasks are you most likely to fail at or give wrong answers for?"
+]
